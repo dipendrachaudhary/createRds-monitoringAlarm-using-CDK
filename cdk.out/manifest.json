@@ -1,0 +1,250 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "RdsStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://885300287765/us-east-1",
+      "properties": {
+        "templateFile": "RdsStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/RdsStack/Topic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TopicBFC7AF6E",
+            "trace": [
+              "new Topic (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/aws-sns/lib/topic.ts:102:22)",
+              "new RdsStack (/home/dipendra/DevOps/cdk/rds/lib/rds-stack.ts:27:19)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/bin/rds.ts:6:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/RdsStack/Subscription/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Subscription391C9821",
+            "trace": [
+              "new Subscription (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/aws-sns/lib/subscription.ts:126:5)",
+              "new RdsStack (/home/dipendra/DevOps/cdk/rds/lib/rds-stack.ts:32:5)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/bin/rds.ts:6:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/RdsStack/VolumeReadIOPSAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VolumeReadIOPSAlarm8BCC9BAB",
+            "trace": [
+              "new Alarm (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/aws-cloudwatch/lib/alarm.ts:168:19)",
+              "new RdsStack (/home/dipendra/DevOps/cdk/rds/lib/rds-stack.ts:47:33)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/bin/rds.ts:6:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/RdsStack/VolumeWriteIOPSAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VolumeWriteIOPSAlarmF3A3045F",
+            "trace": [
+              "new Alarm (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/aws-cloudwatch/lib/alarm.ts:168:19)",
+              "new RdsStack (/home/dipendra/DevOps/cdk/rds/lib/rds-stack.ts:69:34)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/bin/rds.ts:6:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/RdsStack/ReadIOPSAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReadIOPSAlarmD1D52864",
+            "trace": [
+              "new Alarm (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/aws-cloudwatch/lib/alarm.ts:168:19)",
+              "new RdsStack (/home/dipendra/DevOps/cdk/rds/lib/rds-stack.ts:91:27)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/bin/rds.ts:6:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/RdsStack/WriteIOPSAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WriteIOPSAlarmADBE1E65",
+            "trace": [
+              "new Alarm (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/aws-cloudwatch/lib/alarm.ts:168:19)",
+              "new RdsStack (/home/dipendra/DevOps/cdk/rds/lib/rds-stack.ts:113:28)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/bin/rds.ts:6:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/RdsStack/ReaderDiskQueueDepthAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ReaderDiskQueueDepthAlarmBFAF08BE",
+            "trace": [
+              "new Alarm (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/aws-cloudwatch/lib/alarm.ts:168:19)",
+              "new RdsStack (/home/dipendra/DevOps/cdk/rds/lib/rds-stack.ts:135:39)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/bin/rds.ts:6:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/RdsStack/WriterDiskQueueDepthAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WriterDiskQueueDepthAlarm46D8EB45",
+            "trace": [
+              "new Alarm (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/aws-cloudwatch/lib/alarm.ts:168:19)",
+              "new RdsStack (/home/dipendra/DevOps/cdk/rds/lib/rds-stack.ts:157:39)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/bin/rds.ts:6:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Module.m._compile (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1103:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/RdsStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/home/dipendra/DevOps/cdk/rds/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:646:26)",
+              "process.emit (node:events:526:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/home/dipendra/DevOps/cdk/rds/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "RdsStack"
+    }
+  }
+}

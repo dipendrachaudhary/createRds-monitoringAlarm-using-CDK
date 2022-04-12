@@ -1,0 +1,362 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.150.0"
+        }
+      },
+      "RdsStack": {
+        "id": "RdsStack",
+        "path": "RdsStack",
+        "children": {
+          "test": {
+            "id": "test",
+            "path": "RdsStack/test",
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-rds.DatabaseClusterBase",
+              "version": "1.150.0"
+            }
+          },
+          "Topic": {
+            "id": "Topic",
+            "path": "RdsStack/Topic",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "RdsStack/Topic/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SNS::Topic",
+                  "aws:cdk:cloudformation:props": {
+                    "displayName": "rds-test",
+                    "topicName": "rds-test"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-sns.CfnTopic",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-sns.Topic",
+              "version": "1.150.0"
+            }
+          },
+          "Subscription": {
+            "id": "Subscription",
+            "path": "RdsStack/Subscription",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "RdsStack/Subscription/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SNS::Subscription",
+                  "aws:cdk:cloudformation:props": {
+                    "protocol": "email",
+                    "topicArn": {
+                      "Ref": "TopicBFC7AF6E"
+                    },
+                    "endpoint": "dipendrac3@gmail.com"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-sns.CfnSubscription",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-sns.Subscription",
+              "version": "1.150.0"
+            }
+          },
+          "VolumeReadIOPSAlarm": {
+            "id": "VolumeReadIOPSAlarm",
+            "path": "RdsStack/VolumeReadIOPSAlarm",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "RdsStack/VolumeReadIOPSAlarm/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm",
+                  "aws:cdk:cloudformation:props": {
+                    "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                    "evaluationPeriods": 3,
+                    "alarmActions": [
+                      {
+                        "Ref": "TopicBFC7AF6E"
+                      }
+                    ],
+                    "datapointsToAlarm": 2,
+                    "dimensions": [
+                      {
+                        "name": "dbClusterIdentifier",
+                        "value": "test"
+                      }
+                    ],
+                    "metricName": "VolumeReadIOPS",
+                    "namespace": "AWS/RDS",
+                    "period": 300,
+                    "statistic": "Average",
+                    "threshold": 100
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-cloudwatch.CfnAlarm",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-cloudwatch.Alarm",
+              "version": "1.150.0"
+            }
+          },
+          "VolumeWriteIOPSAlarm": {
+            "id": "VolumeWriteIOPSAlarm",
+            "path": "RdsStack/VolumeWriteIOPSAlarm",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "RdsStack/VolumeWriteIOPSAlarm/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm",
+                  "aws:cdk:cloudformation:props": {
+                    "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                    "evaluationPeriods": 3,
+                    "alarmActions": [
+                      {
+                        "Ref": "TopicBFC7AF6E"
+                      }
+                    ],
+                    "datapointsToAlarm": 2,
+                    "dimensions": [
+                      {
+                        "name": "dbClusterIdentifier",
+                        "value": "test"
+                      }
+                    ],
+                    "metricName": "VolumeWriteIOPS",
+                    "namespace": "AWS/RDS",
+                    "period": 300,
+                    "statistic": "Average",
+                    "threshold": 100
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-cloudwatch.CfnAlarm",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-cloudwatch.Alarm",
+              "version": "1.150.0"
+            }
+          },
+          "ReadIOPSAlarm": {
+            "id": "ReadIOPSAlarm",
+            "path": "RdsStack/ReadIOPSAlarm",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "RdsStack/ReadIOPSAlarm/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm",
+                  "aws:cdk:cloudformation:props": {
+                    "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                    "evaluationPeriods": 3,
+                    "alarmActions": [
+                      {
+                        "Ref": "TopicBFC7AF6E"
+                      }
+                    ],
+                    "datapointsToAlarm": 2,
+                    "dimensions": [
+                      {
+                        "name": "DBInstanceIdentifier",
+                        "value": "test-instance-1-us-east-1b"
+                      }
+                    ],
+                    "metricName": "ReadIOPS",
+                    "namespace": "AWS/RDS",
+                    "period": 300,
+                    "statistic": "Average",
+                    "threshold": 100
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-cloudwatch.CfnAlarm",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-cloudwatch.Alarm",
+              "version": "1.150.0"
+            }
+          },
+          "WriteIOPSAlarm": {
+            "id": "WriteIOPSAlarm",
+            "path": "RdsStack/WriteIOPSAlarm",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "RdsStack/WriteIOPSAlarm/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm",
+                  "aws:cdk:cloudformation:props": {
+                    "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                    "evaluationPeriods": 3,
+                    "alarmActions": [
+                      {
+                        "Ref": "TopicBFC7AF6E"
+                      }
+                    ],
+                    "datapointsToAlarm": 2,
+                    "dimensions": [
+                      {
+                        "name": "DBInstanceIdentifier",
+                        "value": "test-instance-1"
+                      }
+                    ],
+                    "metricName": "WriteIOPS",
+                    "namespace": "AWS/RDS",
+                    "period": 300,
+                    "statistic": "Average",
+                    "threshold": 100
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-cloudwatch.CfnAlarm",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-cloudwatch.Alarm",
+              "version": "1.150.0"
+            }
+          },
+          "ReaderDiskQueueDepthAlarm": {
+            "id": "ReaderDiskQueueDepthAlarm",
+            "path": "RdsStack/ReaderDiskQueueDepthAlarm",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "RdsStack/ReaderDiskQueueDepthAlarm/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm",
+                  "aws:cdk:cloudformation:props": {
+                    "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                    "evaluationPeriods": 3,
+                    "alarmActions": [
+                      {
+                        "Ref": "TopicBFC7AF6E"
+                      }
+                    ],
+                    "datapointsToAlarm": 2,
+                    "dimensions": [
+                      {
+                        "name": "DBInstanceIdentifier",
+                        "value": "test-instance-1-us-east-1b"
+                      }
+                    ],
+                    "metricName": "DiskQueueDepth",
+                    "namespace": "AWS/RDS",
+                    "period": 300,
+                    "statistic": "Average",
+                    "threshold": 100
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-cloudwatch.CfnAlarm",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-cloudwatch.Alarm",
+              "version": "1.150.0"
+            }
+          },
+          "WriterDiskQueueDepthAlarm": {
+            "id": "WriterDiskQueueDepthAlarm",
+            "path": "RdsStack/WriterDiskQueueDepthAlarm",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "RdsStack/WriterDiskQueueDepthAlarm/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudWatch::Alarm",
+                  "aws:cdk:cloudformation:props": {
+                    "comparisonOperator": "GreaterThanOrEqualToThreshold",
+                    "evaluationPeriods": 3,
+                    "alarmActions": [
+                      {
+                        "Ref": "TopicBFC7AF6E"
+                      }
+                    ],
+                    "datapointsToAlarm": 2,
+                    "dimensions": [
+                      {
+                        "name": "DBInstanceIdentifier",
+                        "value": "test-instance-1"
+                      }
+                    ],
+                    "metricName": "DiskQueueDepth",
+                    "namespace": "AWS/RDS",
+                    "period": 300,
+                    "statistic": "Average",
+                    "threshold": 100
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-cloudwatch.CfnAlarm",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-cloudwatch.Alarm",
+              "version": "1.150.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "RdsStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "RdsStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.150.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.150.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.150.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.150.0"
+    }
+  }
+}
